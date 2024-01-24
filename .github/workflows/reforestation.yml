@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: "0 1/6 * * *"
+    - cron: "0 1/11 * * *"
 
 jobs:
   auto_commit:
@@ -30,8 +30,8 @@ jobs:
           git config --global user.name "irgiys"
           git config --global user.email "irgiyansy@gmail.com"
           git add .
-          git commit -m "There was nothing here."
-
+          git commit -m `date '+%Y-%m-%dT%H:%M:%SZ'`
+          
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
